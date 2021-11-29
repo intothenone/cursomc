@@ -1,8 +1,7 @@
 package com.educandoweb.cursomc.services;
 
+import java.util.List;
 import java.util.Optional;
-
-import javax.xml.bind.DataBindingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -41,6 +40,10 @@ public class CategoriaService {
 		} catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityExeception("Não é possível excluir uma categoria que possua produtos");
 		}
+	}
+	
+	public List<Categoria> findAll(){
+		return repo.findAll();
 	}
 
 
