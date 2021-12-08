@@ -13,9 +13,11 @@ import javax.persistence.OneToOne;
 
 import com.educandoweb.cursomc.domain.enums.EstadoPagamento;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type") 
 public abstract class Pagamento implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -79,9 +81,13 @@ public abstract class Pagamento implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Pagamento other = (Pagamento) obj;
-		return Objects.equals(id, other.id);
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+//		return Objects.equals(id, other.id);
 	}
-	
-	
 
 }

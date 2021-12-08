@@ -1,10 +1,8 @@
 package com.educandoweb.cursomc.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -59,20 +57,20 @@ public class Pedido implements Serializable{
 	}
 	
 	public double getValorTotal() {
-		double soma = 0;
+		double soma = 0.0;
 		for (ItemPedido ip : itens) {
 			soma = soma + ip.getSubTotal();
 		}
 		return soma;
 	}
 	
-	public List<Pedido> getPedidos(){
-		List<Pedido> lista = new ArrayList<>();
-		for (ItemPedido x : itens) {
-			lista.add(x.getPedido());
-		}
-		return lista;
-	}
+//	public List<Pedido> getPedidos(){
+//		List<Pedido> lista = new ArrayList<>();
+//		for (ItemPedido x : itens) {
+//			lista.add(x.getPedido());
+//		}
+//		return lista;
+//	}
 
 	public Integer getId() {
 		return id;
@@ -136,7 +134,12 @@ public class Pedido implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Pedido other = (Pedido) obj;
-		return Objects.equals(id, other.id);
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 	
 	
