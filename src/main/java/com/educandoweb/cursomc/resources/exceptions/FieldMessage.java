@@ -1,4 +1,4 @@
-package com.educandoweb.cursomc.services.exceptions;
+package com.educandoweb.cursomc.resources.exceptions;
 
 import java.io.Serializable;
 

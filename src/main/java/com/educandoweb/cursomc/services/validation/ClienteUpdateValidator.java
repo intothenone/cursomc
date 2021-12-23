@@ -14,7 +14,7 @@ import org.springframework.web.servlet.HandlerMapping;
 import com.educandoweb.cursomc.domain.Cliente;
 import com.educandoweb.cursomc.dto.ClienteDTO;
 import com.educandoweb.cursomc.repositories.ClienteRepository;
-import com.educandoweb.cursomc.services.exceptions.FieldMessage;
+import com.educandoweb.cursomc.resources.exceptions.FieldMessage;
 
 public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate, ClienteDTO> {
 

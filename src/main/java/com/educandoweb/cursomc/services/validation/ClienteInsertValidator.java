@@ -12,7 +12,7 @@ import com.educandoweb.cursomc.domain.Cliente;
 import com.educandoweb.cursomc.domain.enums.TipoCliente;
 import com.educandoweb.cursomc.dto.ClienteNewDTO;
 import com.educandoweb.cursomc.repositories.ClienteRepository;
-import com.educandoweb.cursomc.services.exceptions.FieldMessage;
+import com.educandoweb.cursomc.resources.exceptions.FieldMessage;
 import com.educandoweb.cursomc.services.validation.utils.BR;
 
 public class ClienteInsertValidator implements ConstraintValidator<ClienteInsert, ClienteNewDTO> {

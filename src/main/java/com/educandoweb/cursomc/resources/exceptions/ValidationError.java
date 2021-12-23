@@ -1,9 +1,7 @@
-package com.educandoweb.cursomc.services.exceptions;
+package com.educandoweb.cursomc.resources.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.educandoweb.cursomc.resources.exceptions.StandardError;
 
 public class ValidationError extends StandardError {
 

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.educandoweb.cursomc.services.exceptions.DataIntegrityExeception;
 import com.educandoweb.cursomc.services.exceptions.ObjectNotFoundException;
-import com.educandoweb.cursomc.services.exceptions.ValidationError;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
