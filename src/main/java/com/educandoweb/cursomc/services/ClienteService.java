@@ -1,9 +1,9 @@
 package com.educandoweb.cursomc.services;
 
+import java.awt.image.BufferedImage;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
-import java.awt.image.BufferedImage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,7 +26,7 @@ import com.educandoweb.cursomc.repositories.ClienteRepository;
 import com.educandoweb.cursomc.repositories.EnderecoRepository;
 import com.educandoweb.cursomc.security.UserSS;
 import com.educandoweb.cursomc.services.exceptions.AuthorizationException;
-import com.educandoweb.cursomc.services.exceptions.DataIntegrityExeception;
+import com.educandoweb.cursomc.services.exceptions.DataIntegrityException;
 import com.educandoweb.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service
@@ -82,7 +82,7 @@ public class ClienteService {
 		try {
 		repo.deleteById(id);			
 		} catch (DataIntegrityViolationException e) {
-			throw new DataIntegrityExeception("Não é possível excluir porque há entidades relacionadas");
+			throw new DataIntegrityException("Não é possível excluir porque há entidades relacionadas");
 		}
 	}
 	
